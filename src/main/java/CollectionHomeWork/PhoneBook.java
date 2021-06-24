@@ -18,6 +18,7 @@ public class PhoneBook {
         phoneBook.add("Кузнецов", "234545");
         phoneBook.add("Сидоров", "89667");
         phoneBook.add("Иванов", "342353");
+        phoneBook.add("Сидоров", "834523");
         phoneBook.get("Иванов");
     }
    private Map <String, HashSet<String>> phoneBook = new HashMap<>();
