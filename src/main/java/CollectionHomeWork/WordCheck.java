@@ -6,7 +6,7 @@ import java.util.*;
 
 public class WordCheck {
     public static void main(String[] args) {
-        String[] list = new String[] {"Стул","Стул", "Стол", "Стул","Шкаф", "холодильник"};
+        String[] list = new String[] {"Стул","Стул", "Стол", "Стул","Шкаф", "холодильник","раковинв","газовая плита", "Шкаф", "окно"};
         Map<String,Integer> uniqueWords = new HashMap<>();
 
 
