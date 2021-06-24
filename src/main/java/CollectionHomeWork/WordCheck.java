@@ -1,35 +1,24 @@
 package CollectionHomeWork;
 //Создать массив с набором слов (10-20 слов, должны встречаться повторяющиеся). Найти и вывести список уникальных слов,
 //        из которых состоит массив (дубликаты не считаем). Посчитать, сколько раз встречается каждое слово.
-//        Написать простой класс Телефонный Справочник, который хранит в себе список фамилий и телефонных номеров.
-//        В этот телефонный справочник с помощью метода add() можно добавлять записи,
-//        а с помощью метода get() искать номер телефона по фамилии. Следует учесть,
-//        что под одной фамилией может быть несколько телефонов (в случае однофамильцев),
-//        тогда при запросе такой фамилии должны выводиться все телефоны.
-//        Желательно не добавлять лишний функционал (дополнительные поля (имя, отчество, адрес),
-//        взаимодействие с пользователем через консоль и т.д).
-//        Консоль использовать только для вывода результатов проверки телефонного справочника.
 
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class WordCheck {
     public static void main(String[] args) {
-        List<String> list = new ArrayList<>(Arrays.asList("Стул","Стул", "Стол", "Стул","Шкаф", "холодильник"));
-        Iterator<String> iter = list.iterator();
-        while (iter.hasNext()){
-            String str = iter.next();
-            if(str.equals(list)){
-                int sum = 1;
-                sum++;
-                System.out.println(str + sum);
+        String[] list = new String[] {"Стул","Стул", "Стол", "Стул","Шкаф", "холодильник"};
+        Map<String,Integer> uniqueWords = new HashMap<>();
+
+
+        for (String word: list) {
+            if(uniqueWords.containsKey(word)){
+                uniqueWords.put(word,  uniqueWords.get(word) + 1);
+            }else {
+                uniqueWords.put(word, 1);
             }
-            else {
-                System.out.println(str);
-            }
+        }
+        for (Map.Entry entry: uniqueWords.entrySet()){
+            System.out.println(entry.getKey() + " : " + entry.getValue());
         }
 
     }
